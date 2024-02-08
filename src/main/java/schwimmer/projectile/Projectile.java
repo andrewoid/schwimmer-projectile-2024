@@ -39,11 +39,5 @@ public class Projectile {
 
     public double getPeakY() {
         return (sin(radians) * velocity) * (sin(radians) * velocity)  /  (GRAVITY * 2);
-//        double peakSeconds = getApexTime();
-//        return sin(radians) * velocity * peakSeconds
-//                - .5 * GRAVITY * peakSeconds * peakSeconds;
     }
-
-
-
 }
