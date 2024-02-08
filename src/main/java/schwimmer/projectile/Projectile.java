@@ -1,5 +1,7 @@
 package schwimmer.projectile;
 
+import static java.lang.Math.sin;
+
 public class Projectile {
 
     private static final double GRAVITY = 9.8;
@@ -24,7 +26,7 @@ public class Projectile {
     }
 
     public double getY() {
-        return Math.sin(radians) * velocity * seconds
+        return sin(radians) * velocity * seconds
                 - .5 * GRAVITY * seconds * seconds;
     }
 
@@ -32,7 +34,16 @@ public class Projectile {
      * @return the time when the Projectile is at its highest point.
      */
     public double getApexTime() {
-        return (velocity * Math.sin(radians)) / GRAVITY;
+        return (velocity * sin(radians)) / GRAVITY;
     }
+
+    public double getPeakY() {
+        return (sin(radians) * velocity) * (sin(radians) * velocity)  /  (GRAVITY * 2);
+//        double peakSeconds = getApexTime();
+//        return sin(radians) * velocity * peakSeconds
+//                - .5 * GRAVITY * peakSeconds * peakSeconds;
+    }
+
+
 
 }
